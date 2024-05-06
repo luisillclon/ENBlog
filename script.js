@@ -1,7 +1,7 @@
   const circle = document.querySelector(`#cursorCircle`)
   document.addEventListener(`mousemove`, e => {
-    const mouseX = e.pageX - 50;
-    const mouseY = e.pageY - 50;
+    const mouseX = e.pageX - 40;
+    const mouseY = e.pageY - 40;
     circle.style = `transform: translate3d(${mouseX}px, ${mouseY}px, 0)`
   })
   // Clock

@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+:root {
+    --principal: #6C5C6A;
+    --back: #ada5a5;
+    --second: #b0a899;
+    --third: #ededee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: Creek;
+    src: url(sources/BlueCreek.otf);
+}
+
+
+#cursorCircle {
+    position: absolute;
+    border: 3px solid #08584e;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+body {
+    background-color: var(--back);
+}
+
+/* Navigation */
+.navigation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10em;
+    background-color: var(--principal);
+}
+
+.navigation__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    width: 100%;
+}
+
+.navigation__h1 {
+    font-family: Creek, sans-serif;
+    font-size: 4em;
+    display: inline-block;
+    letter-spacing: 5px;
+    color: var(--third);
+}
+
+.downloadButton {
+    position: relative;
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    z-index: 0;
+    letter-spacing: 3px;
+    font-size: 1.5em;
+    transition: all 450ms ease;
+}
+
+.downloadButton::after,
+.downloadButton::before {
+    content: "";
+    display: block;
+    position: absolute;
+    transition: width 540ms, opacity 300ms ease;
+}
+
+
+.downloadButton::before,
+.downloadButton::after {
+    height: 0.1em;
+    bottom: -1px;
+}
+
+.downloadButton::before {
+    width: 0;
+    background-color: #ebde30;
+}
+
+.downloadButton::after {
+    width: 100%;
+    border: 1px solid #ebde30;
+    border-top: 0;
+    opacity: 0;
+}
+
+.downloadButton:hover {
+    color: #ebde30;
+}
+
+.downloadButton:hover::before {
+    width: 0;
+    animation: width 1500ms ease forwards;
+}
+
+.downloadButton:hover::after {
+    opacity: 1;
+}
+
+@keyframes width {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+/* Banner */
+.banner {
+    position: relative;
+}
+
+.box__container {
+    height: 1em;
+    font-family: "Lato", sans-serif;
+    font-size: 36px;
+    color: var(--third);
+    font-weight: 600;
+    padding: 0 .5em;
+    overflow: hidden;
+}
+
+.box__container:before {
+    content: "[";
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.box__container:after {
+    content: "]";
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.box__container:after,
+.box__container:before {
+    color: var(--second);
+    font-size: 1em;
+    -webkit-animation-name: opacity;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.box__container__list {
+    margin-top: 0;
+    padding-left: 100px;
+    text-align: left;
+    list-style: none;
+    -webkit-animation-name: change;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: change;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.box__container__list__item {
+    line-height: 40px;
+    margin: 0;
+}
+
+@-webkit-keyframes opacity {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes change {
+
+    0%,
+    12.66%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    16.66%,
+    29.32% {
+        transform: translate3d(0, -25%, 0);
+    }
+
+    33.32%,
+    45.98% {
+        transform: translate3d(0, -50%, 0);
+    }
+
+    49.98%,
+    62.64% {
+        transform: translate3d(0, -75%, 0);
+    }
+
+    66.64%,
+    79.3% {
+        transform: translate3d(0, -50%, 0);
+    }
+
+    83.3%,
+    95.96% {
+        transform: translate3d(0, -25%, 0);
+    }
+}
+
+@keyframes opacity {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes change {
+
+    0%,
+    12.66%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    16.66%,
+    29.32% {
+        transform: translate3d(0, -25%, 0);
+    }
+
+    33.32%,
+    45.98% {
+        transform: translate3d(0, -50%, 0);
+    }
+
+    49.98%,
+    62.64% {
+        transform: translate3d(0, -75%, 0);
+    }
+
+    66.64%,
+    79.3% {
+        transform: translate3d(0, -50%, 0);
+    }
+
+    83.3%,
+    95.96% {
+        transform: translate3d(0, -25%, 0);
+    }
+}
+
+
+/*Bubbles*/
+.bubbles {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: .4;
+}
+
+.bubbles span {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-image: url(blogmore/firstbubble.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 4px;
+    border-radius: 50%;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(200s/var(--i));
+}
+
+.bubbles span:nth-child(even) {
+    background-image: url(blogmore/secondbubble.png);
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+.blog {
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.blog li {
+    list-style: none;
+    width: 100%;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--second);
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(0, 0, 0, 0.15);
+}
+
+.blog li label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+label::before {
+    content: "+";
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 600;
+
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.blog .content {
+    color: #555;
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+
+.blog .content:hover {
+    flex-grow: 9;
+    cursor: url("blogmore/pencil.png"), auto;
+}
+
+.blog input[type="radio"]:checked+label+.content {
+    max-height: 400px;
+    padding: 20px;
+}
+
+.blog input[type="radio"]:checked+label::before {
+    content: "-"
+}
+
+input[type="date"] {
+    display: block;
+    float: left;
+    border: none;
+    font-size: 100%;
+    text-align: center;
+    background-color: transparent;
+}
+
+/*Clock*/
+.reloj {
+    font-family: 'share tech mono', monospace;
+    color: #000000;
+    text-align: center;
+    margin: 1em;
+}
+
+.fecha {
+    letter-spacing: 0.1em;
+    font-size: 24px;
+}
+
+.tiempo {
+    letter-spacing: 0.1em;
+    font-size: 24px;
+}
